@@ -13,10 +13,18 @@ const http=require('http');
 // })
 
 //* this server funciton of http return a object and we have to listen it 
-const server=http.createServer((req,res)=>{
-  console.log(req);
+// const server=http.createServer((req,res)=>{
+//   console.log(req);
+//   process.exit();  // to exit the server when ever you want 
   
+// })
+
+//* if we want only one header then 
+const server=http.createServer((req,res)=>{
+  console.log(req.method,req.url,req.headers);
+  process.exit();
 })
+
 
 // server.listen(3000);
  //* where 3000 is the port number 
@@ -28,6 +36,7 @@ const PORT=3000;
 server.listen(PORT,()=>{
   console.log(`the server is start on http://localhost:${PORT}`);
   
-})
+}) 
+
 
 
